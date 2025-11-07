@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniRaum Status</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+        <div class="header-wrapper">
+            <div class="logo">UniRaum</div>
+            
+            <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="themeToggle">
+                    <input type="checkbox" id="themeToggle" />
+                    <span class="slider round"></span>
+                </label>
+                <span id="themeLabel">Helles Design</span>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <input type="text" id="raumSuche" placeholder="Raumnummer suchen (z.B. A.101)">
+            
+            <div id="tagesAuswahl" class="day-selector">
+                <button class="day-btn" data-day-key="Montag">Mo</button>
+                <button class="day-btn" data-day-key="Dienstag">Di</button>
+                <button class="day-btn" data-day-key="Mittwoch">Mi</button>
+                <button class="day-btn" data-day-key="Donnerstag">Do</button>
+                <button class="day-btn" data-day-key="Freitag">Fr</button>
+            </div>
+        </div>
+        
+        <div id="ergebnisAnzeige">
+            <p class="placeholder">Raum aus der Liste wählen oder Suche starten.</p>
+        </div>
+
+        <div class="list-header">
+            <h3>Alle Räume</h3>
+            <p>Status (Jetzt)</p>
+        </div>
+
+        <div id="raumListe">
+            </div>
+
+    </main>
+    
+    <script src="app.js"></script>
+</body>
+</html>

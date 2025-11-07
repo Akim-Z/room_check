@@ -1,0 +1,186 @@
+/* --- 1. Визначення змінних (Теми) --- */
+:root {
+    /* ... (усі ваші змінні теми залишаються без змін) ... */
+    --bg-primary: #0B0B0B;
+    --bg-secondary: #111111;
+    --bg-tertiary: #1A1A1A;
+    --bg-hover: #1E1E1E;
+    --border-primary: #222222;
+    --border-secondary: #333333;
+    --border-focus: #555555;
+    --text-primary: #E0E0E0;
+    --text-secondary: #AAAAAA;
+    --text-tertiary: #777777;
+    --text-placeholder: #666666;
+    --text-logo: #FFFFFF;
+    --status-frei-text: #4CAF50;
+    --status-frei-bg: #4CAF50;
+    --status-frei-slot-bg: rgba(76, 175, 80, 0.05);
+    --status-besetzt-text: #F44336;
+    --status-besetzt-bg: #F44336;
+    --day-btn-selected-bg: var(--bg-secondary);
+    --day-btn-selected-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+body.light-mode {
+    /* ... (усі ваші змінні світлої теми залишаються без змін) ... */
+    --bg-primary: #F4F5F7;
+    --bg-secondary: #FFFFFF;
+    --bg-tertiary: #EAECEF;
+    --bg-hover: #F0F2F5;
+    --border-primary: #D1D5DB;
+    --border-secondary: #C1C7D0;
+    --border-focus: #4A90E2;
+    --text-primary: #172B4D;
+    --text-secondary: #42526E;
+    --text-tertiary: #5E6C84;
+    --text-placeholder: #7A869A;
+    --text-logo: #000000;
+    --status-frei-text: #006400;
+    --status-frei-bg: #2E8B57;
+    --status-frei-slot-bg: #E6F4EA;
+    --status-besetzt-text: #BF2600;
+    --status-besetzt-bg: #D93025;
+    --day-btn-selected-bg: var(--bg-secondary);
+    --day-btn-selected-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+/* --- 2. Базові стилі (Без змін) --- */
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: grid;
+    place-items: center;
+    min-height: 90vh;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+/* ... (стилі .container, .header-wrapper, .logo, .theme-switch... залишаються БЕЗ ЗМІН) ... */
+.container { width: 100%; max-width: 550px; text-align: center; }
+.header-wrapper { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+.logo { font-size: 28px; font-weight: 500; color: var(--text-logo); letter-spacing: -1px; }
+.theme-switch-wrapper { display: flex; align-items: center; gap: 12px; }
+#themeLabel { font-size: 14px; color: var(--text-secondary); font-weight: 500; }
+.theme-switch { position: relative; display: inline-block; width: 50px; height: 26px; }
+.theme-switch input { opacity: 0; width: 0; height: 0; }
+.slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: var(--bg-tertiary); border: 1px solid var(--border-secondary); transition: .4s; border-radius: 26px; }
+.slider:before { position: absolute; content: ""; height: 18px; width: 18px; left: 3px; bottom: 3px; background-color: var(--text-tertiary); transition: .4s; border-radius: 50%; }
+input:checked + .slider { background-color: #4A90E2; border-color: #4A90E2; }
+input:checked + .slider:before { background-color: white; transform: translateX(24px); }
+
+/* --- 4. Елементи керування (Без змін) --- */
+.controls { display: grid; grid-template-columns: 1fr; gap: 16px; margin-bottom: 24px; }
+@media (min-width: 600px) { .controls { grid-template-columns: 1fr auto; gap: 12px; } }
+#raumSuche { flex-grow: 1; background-color: var(--bg-tertiary); color: var(--text-primary); border: 1px solid var(--border-secondary); border-radius: 12px; font-size: 18px; font-weight: 500; font-family: inherit; padding: 16px 20px; box-sizing: border-box; transition: all 0.2s ease; }
+#raumSuche::placeholder { color: var(--text-placeholder); }
+#raumSuche:focus { outline: none; border-color: var(--border-focus); background-color: var(--bg-secondary); box-shadow: 0 0 0 3px var(--border-focus-shadow, rgba(100, 100, 100, 0.1)); }
+body.light-mode #raumSuche:focus { --border-focus-shadow: rgba(74, 144, 226, 0.2); }
+#tagesAuswahl.day-selector { display: flex; gap: 6px; background-color: var(--bg-tertiary); border-radius: 12px; padding: 4px; border: 1px solid var(--border-secondary); }
+.day-btn { flex-grow: 1; border: none; background-color: transparent; color: var(--text-secondary); padding: 10px; font-size: 15px; font-weight: 500; font-family: inherit; border-radius: 9px; cursor: pointer; transition: background-color 0.2s ease, color 0.2s ease; }
+.day-btn:hover { color: var(--text-primary); }
+.day-btn.selected { background-color: var(--day-btn-selected-bg); color: var(--text-primary); box-shadow: var(--day-btn-selected-shadow); }
+
+/* --- 5. Блок результатів (ОНОВЛЕНО) --- */
+#ergebnisAnzeige {
+    min-height: 50px; /* Менша висота, оскільки деталі приховані */
+    line-height: 1.6;
+    color: var(--text-secondary);
+    text-align: left;
+    background-color: var(--bg-secondary);
+    border-radius: 12px;
+    padding: 16px 24px; /* Загальний падінг */
+    border: 1px solid var(--border-primary);
+    margin-bottom: 24px;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+.placeholder {
+    color: var(--text-tertiary);
+    font-size: 15px;
+    text-align: center;
+    padding: 0; /* Прибираємо зайвий падінг */
+}
+
+/* === НОВІ СТИЛІ: Заголовок статусу (кнопка) === */
+.status-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    user-select: none; /* Забороняємо виділення тексту */
+}
+/* Вимикаємо курсор, якщо деталей немає */
+#ergebnisAnzeige.no-details .status-header {
+    cursor: default;
+}
+.status-info {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Збільшуємо відступ */
+}
+.status-text {
+    font-size: 18px;
+    font-weight: 600;
+}
+.status-text.frei { color: var(--status-frei-text); }
+.status-text.besetzt { color: var(--status-besetzt-text); }
+/* Статус для іншого дня (не сьогодні) */
+.status-text.neutral {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+/* Іконка-стрілка */
+.toggle-icon {
+    font-size: 16px;
+    color: var(--text-tertiary);
+    transition: transform 0.3s ease;
+}
+/* Приховуємо іконку, якщо деталей немає */
+#ergebnisAnzeige.no-details .toggle-icon {
+    display: none;
+}
+/* Анімація іконки */
+#ergebnisAnzeige.expanded .toggle-icon {
+    transform: rotate(180deg);
+}
+
+/* === НОВІ СТИЛІ: Контент, що згортається === */
+.details-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding-top 0.3s ease-out;
+    border-top: none;
+    padding-top: 0;
+}
+/* Стилі для розгорнутого стану */
+#ergebnisAnzeige.expanded .details-content {
+    max-height: 500px; /* Достатньо велике, щоб вмістити розклад */
+    padding-top: 16px; /* Відступ зверху, коли відкрито */
+    border-top: 1px solid var(--border-primary); /* Розділювач */
+    margin-top: 16px; /* Відступ від заголовка */
+}
+
+/* Стилі для списку розкладу (Без змін) */
+.stundenplan { list-style: none; padding: 0; margin: 0; }
+/* ... (всі стилі .stundenplan li, .slot-besetzt, .slot-frei залишаються БЕЗ ЗМІН) ... */
+.stundenplan li { padding: 10px 0; border-bottom: 1px solid var(--border-primary); display: flex; justify-content: space-between; align-items: center; transition: background-color 0.2s ease, border-color 0.2s ease; }
+.stundenplan li:last-child { border-bottom: none; }
+.stundenplan .slot-besetzt { color: var(--text-secondary); }
+.stundenplan .slot-besetzt strong { color: var(--text-primary); font-weight: 500; }
+.stundenplan .slot-frei { color: var(--status-frei-text); font-weight: 500; background-color: var(--status-frei-slot-bg); margin: 0 -24px; padding: 10px 24px; }
+.stundenplan .slot-frei .zeit { color: var(--status-frei-text); opacity: 0.8; font-weight: 400; }
+
+/* --- 6. Список кімнат (Без змін) --- */
+/* ... (всі стилі .list-header, #raumListe, .listen-eintrag, .status-punkt залишаються БЕЗ ЗМІН) ... */
+.list-header { display: flex; justify-content: space-between; align-items: baseline; padding: 0 10px; border-bottom: 1px solid var(--border-secondary); margin-bottom: 10px; }
+.list-header h3 { font-size: 16px; color: var(--text-logo); margin: 10px 0; font-weight: 500;}
+.list-header p { font-size: 12px; color: var(--text-tertiary); margin: 0; }
+#raumListe { width: 100%; max-height: 300px; overflow-y: auto; background-color: var(--bg-secondary); border-radius: 12px; border: 1px solid var(--border-primary); transition: background-color 0.2s ease, border-color 0.2s ease; }
+.listen-eintrag { display: flex; align-items: center; padding: 14px 20px; border-bottom: 1px solid var(--border-primary); cursor: pointer; transition: background-color 0.15s ease, border-color 0.2s ease, transform 0.1s ease-out; }
+.listen-eintrag:last-child { border-bottom: none; }
+.listen-eintrag:hover { background-color: var(--bg-hover); transform: scale(1.01); }
+.listen-eintrag-name { font-size: 16px; font-weight: 500; color: var(--text-primary); }
+.status-punkt { width: 10px; height: 10px; border-radius: 50%; margin-right: 16px; flex-shrink: 0; transition: background-color 0.5s ease, box-shadow 0.5s ease; }
+.status-punkt.frei { background-color: var(--status-frei-bg); box-shadow: 0 0 5px var(--status-frei-bg); }
+.status-punkt.besetzt { background-color: var(--status-besetzt-bg); box-shadow: 0 0 5px var(--status-besetzt-bg); }
