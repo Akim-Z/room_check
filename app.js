@@ -12,20 +12,20 @@ const raumDaten = {
       {"fach": "Programmierung 1", "start": "16:30", "ende": "18:00"}
     ],
     "Dienstag": [
-      {"fach": "Programmierung 1", "start": "8:00", "ende": "9:30"},
+      {"fach": "Programmierung 1", "start": "08:00", "ende": "09:30"},
       {"fach": "Objektorientierte Analyse und Design", "start": "10:00", "ende": "11:30"},
       {"fach": "Informatik für Maschinenbau", "start": "12:15", "ende": "13:45"},
       {"fach": "Programmierung 2", "start": "14:30", "ende": "16:00"},
       {"fach": "Programmierung 2", "start": "16:30", "ende": "18:00"}
     ],
     "Mittwoch": [
-      {"fach": "Systemzeit", "start": "8:00", "ende": "9:30"},
+      {"fach": "Systemzeit", "start": "08:00", "ende": "09:30"},
       {"fach": "Objektorientierte Analyse und Design", "start": "10:00", "ende": "11:30"},
       {"fach": "Programmierung 3", "start": "12:15", "ende": "13:45"},
       {"fach": "Programmierung 1", "start": "16:30", "ende": "18:00"}
     ],
     "Donnerstag": [
-      {"fach": "Programmierung 2", "start": "8:30", "ende": "9:00"},
+      {"fach": "Programmierung 2", "start": "08:30", "ende": "09:00"},
       {"fach": "Programmierung 1", "start": "14:30", "ende": "16:00"}
     ],
     "Freitag": [
@@ -155,7 +155,7 @@ const raumDaten = {
   // === SI.0202 (з фото, прив'язано до сітки) ===
   "SI.0202": {
     "Montag": [
-      {"fach": "Antriebe", "start": "8:00", "ende": "9:30"},
+      {"fach": "Antriebe", "start": "08:00", "ende": "09:30"},
       {"fach": "Antriebe", "start": "12:15", "ende": "13:45"}
     ],
     "Dienstag": [
@@ -165,10 +165,10 @@ const raumDaten = {
       {"fach": "Konstruktion", "start": "16:30", "ende": "18:00"}
     ],
     "Mittwoch": [
-      {"fach": "Systemzeit", "start": "8:00", "ende": "9:30"}
+      {"fach": "Systemzeit", "start": "08:00", "ende": "09:30"}
     ],
     "Donnerstag": [
-      {"fach": "Antriebe", "start": "8:00", "ende": "9:30"}
+      {"fach": "Antriebe", "start": "08:00", "ende": "09:30"}
     ],
     "Freitag": [
       {"fach": "Antriebe", "start": "12:15", "ende": "13:45"},
@@ -186,11 +186,11 @@ const raumDaten = {
       {"fach": "Konstruktion", "start": "14:30", "ende": "16:00"}
     ],
     "Mittwoch": [
-      {"fach": "Systemzeit", "start": "8:00", "ende": "9:30"}
+      {"fach": "Systemzeit", "start": "08:00", "ende": "09:30"}
     ],
     "Donnerstag": [],
     "Freitag": [
-      {"fach": "Big Data", "start": "8:00", "ende": "9:30"},
+      {"fach": "Big Data", "start": "08:00", "ende": "09:30"},
       {"fach": "Big Data", "start": "10:00", "ende": "11:30"}
     ]
   },
