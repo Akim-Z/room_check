@@ -1,14 +1,8 @@
-/* ============================================================
-== РЕДАГУЙТЕ ЦЕЙ БЛОК ==
-*/
+
 const UNI_START = "08:00";
 const UNI_END = "22:00"; 
 
-/* ============================================================
-   == !!! ЗАЛИШТЕ ВАШ ВЕЛИКИЙ МАСИВ RAUMDATEN ТУТ !!! ==
-   ============================================================
-*/
-// Приклад, щоб файл працював (замініть це вашим великим об'єктом)
+// Приклад, щоб файл працював
 const raumDaten = {
   // === SI.0001 (з фото, прив'язано до сітки) ===
   "SI.0001": {
@@ -18,21 +12,25 @@ const raumDaten = {
       {"fach": "Programmierung 1", "start": "16:30", "ende": "18:00"}
     ],
     "Dienstag": [
-      {"fach": "Informatik für Maschinenbau", "start": "10:00", "ende": "11:30"},
+      {"fach": "Programmierung 1", "start": "8:00", "ende": "9:30"},
+      {"fach": "Objektorientierte Analyse und Design", "start": "10:00", "ende": "11:30"},
       {"fach": "Informatik für Maschinenbau", "start": "12:15", "ende": "13:45"},
-      {"fach": "Programmierung 1", "start": "16:30", "ende": "18:00"}
+      {"fach": "Programmierung 2", "start": "14:30", "ende": "16:00"},
+      {"fach": "Programmierung 2", "start": "16:30", "ende": "18:00"}
     ],
     "Mittwoch": [
-      {"fach": "Programmierung 1", "start": "10:00", "ende": "11:30"},
-      {"fach": "Tutorium: Programmierung 1", "start": "12:15", "ende": "13:45"},
-      {"fach": "Programmierung 1", "start": "18:30", "ende": "20:00"}
-    ],
-    "Donnerstag": [
-      {"fach": "Software Architektur", "start": "12:15", "ende": "13:45"},
+      {"fach": "Systemzeit", "start": "8:00", "ende": "9:30"},
+      {"fach": "Objektorientierte Analyse und Design", "start": "10:00", "ende": "11:30"},
+      {"fach": "Programmierung 3", "start": "12:15", "ende": "13:45"},
       {"fach": "Programmierung 1", "start": "16:30", "ende": "18:00"}
     ],
+    "Donnerstag": [
+      {"fach": "Programmierung 2", "start": "8:30", "ende": "9:00"},
+      {"fach": "Programmierung 1", "start": "14:30", "ende": "16:00"}
+    ],
     "Freitag": [
-      {"fach": "Tutorium: Programmierung 1", "start": "08:00", "ende": "09:30"},
+      {"fach": "Programmierung 2", "start": "08:00", "ende": "09:30"},
+      {"fach": "Programmierung 1", "start": "10:00", "ende": "11:30"},
       {"fach": "Programmierung 1", "start": "12:15", "ende": "13:45"},
       {"fach": "Programmierung 1", "start": "14:30", "ende": "16:00"}
     ]
@@ -47,42 +45,42 @@ const raumDaten = {
       {"fach": "Informatik für Maschinenbau", "start": "12:15", "ende": "13:45"}
     ],
     "Mittwoch": [
+      {"fach": "Systemzeit", "start": "8:30", "ende": "9:00"},
       {"fach": "Tutorium: Programmierung 1", "start": "12:15", "ende": "13:45"},
-      {"fach": "Programmierung 1", "start": "18:30", "ende": "20:00"}
+      {"fach": "Programmierung 1", "start": "16:30", "ende": "18:00"}
     ],
     "Donnerstag": [
       {"fach": "Höhere Regelungstechnik", "start": "10:00", "ende": "11:30"},
-      {"fach": "Software Architektur", "start": "14:30", "ende": "16:00"},
-      {"fach": "Programmierung 1", "start": "16:30", "ende": "18:00"}
+      {"fach": "Software Architektur", "start": "12:15", "ende": "13:45"},
+      {"fach": "Programmierung 1", "start": "14:30", "ende": "16:00"}
     ],
     "Freitag": [
       {"fach": "Tutorium: Programmierung 1", "start": "08:00", "ende": "09:30"},
       {"fach": "Programmierung 1", "start": "10:00", "ende": "11:30"},
-      {"fach": "Programmierung 1", "start": "14:30", "ende": "16:00"}
+      {"fach": "Programmierung 1", "start": "12:15", "ende": "13:45"}
     ]
   },
   
   // === SI.0003 (з фото, прив'язано до сітки) ===
   "SI.0003": {
     "Montag": [
-      {"fach": "Programmierung 1", "start": "12:15", "ende": "13:45"},
-      {"fach": "Programmierung 1", "start": "16:30", "ende": "18:00"},
-      {"fach": "Programmierung 1", "start": "18:30", "ende": "20:00"}
-    ],
-    "Dienstag": [
-      {"fach": "Informatik für Maschinenbau", "start": "10:00", "ende": "11:30"},
-      {"fach": "Informatik für Maschinenbau", "start": "12:15", "ende": "13:45"},
+      {"fach": "Objektorientierte Analyse und Design", "start": "10:00", "ende": "11:30"},
       {"fach": "Programmierung 1", "start": "16:30", "ende": "18:00"}
     ],
+    "Dienstag": [
+      {"fach": "Programmierung 1", "start": "8:30", "ende": "9:00"},
+      {"fach": "Informatik für Maschinenbau", "start": "12:15", "ende": "13:45"},
+      {"fach": "Programmierung 3", "start": "14:30", "ende": "16:00"},
+      {"fach": "Programmierung 3", "start": "16:30", "ende": "18:00"}
+    ],
     "Mittwoch": [
-      {"fach": "Seminar", "start": "10:00", "ende": "11:30"},
-      {"fach": "Programmierung 1", "start": "14:30", "ende": "16:00"}
+      {"fach": "Systemzeit", "start": "8:00", "ende": "9:30"}
     ],
     "Donnerstag": [
-      {"fach": "Programmierung 1", "start": "12:15", "ende": "13:45"},
-      {"fach": "Programmierung 1", "start": "14:30", "ende": "16:00"}
+      {"fach": "Programmierung 2", "start": "12:15", "ende": "13:45"}
     ],
     "Freitag": [
+      {"fach": "Programmierung 1", "start": "10:00", "ende": "11:30"},
       {"fach": "Programmierung 1", "start": "12:15", "ende": "13:45"}
     ]
   },
@@ -132,69 +130,68 @@ const raumDaten = {
   // === SI.0201 (з фото, прив'язано до сітки) ===
   "SI.0201": {
     "Montag": [
-      {"fach": "Softwareentwicklung II", "start": "10:00", "ende": "11:30"},
-      {"fach": "WebEngineering", "start": "12:15", "ende": "13:45"}
+      {"fach": "Orientierung und Methoden", "start": "10:00", "ende": "11:30"},
+      {"fach": "Modelierung und Simulation", "start": "12:15", "ende": "13:45"}
     ],
     "Dienstag": [
-      {"fach": "Embedded Systems", "start": "10:00", "ende": "11:30"},
-      {"fach": "Entwurf v. Sozio-Techn. Sys.", "start": "12:15", "ende": "13:45"},
-      {"fach": "Rechnernetze", "start": "16:30", "ende": "18:00"},
-      {"fach": "Rechnernetze", "start": "18:30", "ende": "20:00"}
+      {"fach": "Wissenschaftliche Arbeitstechniken", "start": "08:00", "ende": "09:30"},
+      {"fach": "Wissenschaftliche Arbeitstechniken", "start": "10:00", "ende": "11:30"},
+      {"fach": "Konstruktionen", "start": "12:15", "ende": "13:45"},
+      {"fach": "Datenbanken", "start": "14:30", "ende": "16:00"},
+      {"fach": "Datenbanken", "start": "16:30", "ende": "18:00"}
     ],
     "Mittwoch": [
-      {"fach": "WebEngineering", "start": "08:00", "ende": "09:30"},
-      {"fach": "Mobile Application Development", "start": "12:15", "ende": "13:45"},
-      {"fach": "WebEngineering", "start": "16:30", "ende": "18:00"},
-      {"fach": "Systemnahe Programmierung", "start": "18:30", "ende": "20:00"}
+      {"fach": "Systemzeit", "start": "08:00", "ende": "09:30"},
+      {"fach": "Mechatronishe Systeme", "start": "12:15", "ende": "13:45"},
+      {"fach": "Regelungstechnik", "start": "14:30", "ende": "16:00"}
     ],
     "Donnerstag": [
-      {"fach": "Embedded Systems", "start": "08:00", "ende": "09:30"},
-      {"fach": "IT-Sicherheit", "start": "10:00", "ende": "11:30"},
-      {"fach": "IT-Sicherheit", "start": "12:15", "ende": "13:45"}
+      {"fach": "Regelungstechnik", "start": "08:00", "ende": "09:30"},
+      {"fach": "CEA fur Kunststoftechnik", "start": "12:15", "ende": "13:45"}
     ],
-    "Freitag": [
-      {"fach": "Compilerbau", "start": "10:00", "ende": "11:30"},
-      {"fach": "IT für Maschinenbauer", "start": "12:15", "ende": "13:45"}
-    ]
+    "Freitag": []
   },
   
   // === SI.0202 (з фото, прив'язано до сітки) ===
   "SI.0202": {
     "Montag": [
-      {"fach": "Digitale Welten", "start": "10:00", "ende": "11:30"},
-      {"fach": "Agile Entwicklung", "start": "12:15", "ende": "13:45"}
+      {"fach": "Antriebe", "start": "8:00", "ende": "9:30"},
+      {"fach": "Antriebe", "start": "12:15", "ende": "13:45"}
     ],
     "Dienstag": [
-      {"fach": "Embedded Systems", "start": "08:00", "ende": "09:30"},
-      {"fach": "Wiss. Arbeiten", "start": "12:15", "ende": "13:45"},
-      {"fach": "Digitalisierung v. Geschäftsproz.", "start": "16:30", "ende": "18:00"}
+      {"fach": "Wissenschaftliche Arbeitstechniken", "start": "08:00", "ende": "09:30"},
+      {"fach": "Wissenschaftliche Arbeitstechniken", "start": "10:00", "ende": "11:30"},
+      {"fach": "Regelungstechnik fur Maschinenbau", "start": "14:30", "ende": "16:00"},
+      {"fach": "Konstruktion", "start": "16:30", "ende": "18:00"}
     ],
     "Mittwoch": [
-      {"fach": "KI-Systeme", "start": "10:00", "ende": "11:30"}
+      {"fach": "Systemzeit", "start": "8:00", "ende": "9:30"}
     ],
-    "Donnerstag": [],
+    "Donnerstag": [
+      {"fach": "Antriebe", "start": "8:00", "ende": "9:30"}
+    ],
     "Freitag": [
-      {"fach": "Aktive Bauelemente", "start": "12:15", "ende": "13:45"},
-      {"fach": "Grundlagen Elektrotechnik", "start": "14:30", "ende": "16:00"}
+      {"fach": "Antriebe", "start": "12:15", "ende": "13:45"},
+      {"fach": "Grundlagen Mikrorechensystemen", "start": "14:30", "ende": "16:00"}
     ]
   },
   
   // === SI.0203 (з фото, прив'язано до сітки) ===
   "SI.0203": {
     "Montag": [
-      {"fach": "Informationsmanagement", "start": "12:15", "ende": "13:45"},
-      {"fach": "Grundlagen agiler Entwicklung", "start": "14:30", "ende": "16:00"}
+      {"fach": "Simulation", "start": "12:15", "ende": "13:45"},
+      {"fach": "Simulation", "start": "14:30", "ende": "16:00"}
     ],
     "Dienstag": [
-      {"fach": "Kameratechnik", "start": "14:30", "ende": "16:00"}
+      {"fach": "Konstruktion", "start": "14:30", "ende": "16:00"}
     ],
     "Mittwoch": [
-      {"fach": "Systemzeit", "start": "10:00", "ende": "11:30"}
+      {"fach": "Systemzeit", "start": "8:00", "ende": "9:30"}
     ],
     "Donnerstag": [],
     "Freitag": [
-      {"fach": "Begleitete Praxisphase", "start": "10:00", "ende": "11:30"},
-      {"fach": "Seminar DKE", "start": "12:15", "ende": "13:45"}
+      {"fach": "Big Data", "start": "8:00", "ende": "9:30"},
+      {"fach": "Big Data", "start": "10:00", "ende": "11:30"}
     ]
   },
 };
